@@ -4,6 +4,11 @@ body {
 }
 
 /* header */
+header.site-header {
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
 div.hero {
   background-image: url(../image/Playa.jpeg);
   background-position: top center;
@@ -46,6 +51,23 @@ div.barra {
   padding: 20px 0;
 }
 
+.fixed {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 2;
+}
+
+div.logo {
+  width: 80%;
+  float: left;
+}
+
+div.logo img {
+  width: 100%;
+}
+
 nav.menu-principal {
   display: none;
   width: 100%;
@@ -63,4 +85,23 @@ nav.menu-principal a {
   text-transform: uppercase;
   transition: all 0.6s ease;
   width: 100%;
+}
+
+div.menu-movil {
+  display: block;
+  float: right;
+  margin-top: 12px;
+  text-align: right;
+  width: 60px;
+}
+
+div.menu-movil:hover {
+  cursor: pointer;
+}
+
+div.menu-movil span {
+  background-color: #ffffff;
+  display: block;
+  height: 8px;
+  margin-bottom: 6px;
 }
