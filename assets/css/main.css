@@ -1,107 +1,79 @@
 body {
-  background-color: #f2f2f2;
-  font-family: "Open Sans", sans-serif;
+  background-color: #dfdbe5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%239C92AC' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+  font-family: "Oswald", sans-serif;
+}
+/* Globales */
+img {
+  max-width: 100%;
+  height: auto;
 }
 
-/* header */
-header.site-header {
-  background-color: rgba(0, 0, 0, 0.1);
-  z-index: 1;
-}
-
-div.hero {
-  background-image: url(../image/Playa.jpeg);
-  background-position: top center;
-  background-size: cover;
-  height: 100vh;
-}
-
-div.contenido-header {
-  padding-top: 40px;
-}
-
-div.informacion {
-  color: #ffffff;
-  text-align: center;
-}
-
-div.informacion p {
-  display: inline;
-  font-size: 20px;
-  margin: 0;
-  text-transform: uppercase;
-}
-
-div.flex {
-  display: flex;
-  justify-content: space-between;
+.contenedor {
   margin: 0 auto;
   width: 90%;
 }
 
-h1.nombre {
-  font-family: "PT Sans", sans-serif;
-  font-size: 5.9vw;
-  text-transform: uppercase;
-}
-
-/* Barra */
-div.barra {
-  background-color: #353535;
-  padding: 20px 0;
-}
-
-.fixed {
-  position: fixed;
-  width: 100%;
-  left: 0;
-  top: 0;
-  z-index: 2;
-}
-
-div.logo {
-  width: 80%;
-  float: left;
-}
-
-div.logo img {
+/* header */
+header.site-header {
+  align-items: center;
+  background: url(../image/Playa.jpeg) no-repeat center center/cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  padding-top: 40px;
   width: 100%;
 }
 
-nav.menu-principal {
-  display: none;
-  width: 100%;
-}
-
-nav.menu-principal a {
-  clear: both;
+.header-titulo {
   color: #ffffff;
-  display: block;
-  font-family: sans-serif;
-  font-size: 1.3em;
-  margin-bottom: 20px;
-  text-align: center;
+  font-size: 6rem;
+  margin-bottom: 0;
+}
+
+header.site-header p {
+  color: #ffffff;
+  font-size: 3rem;
+  margin-top: 0;
+}
+
+/* Menu */
+.menu-principal {
+  background-color: #343a40;
+  padding: 15px;
+}
+
+.content {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: auto;
+  width: 90%;
+}
+
+.logo img {
+  border-radius: 5px;
+  height: 50px;
+}
+
+.menu {
+  list-style: none;
+}
+
+.menu li {
+  display: inline;
+  margin-right: 15px;
+}
+
+.menu li a {
+  color: #ffffff;
+  font-size: 1.2rem;
   text-decoration: none;
-  text-transform: uppercase;
-  transition: all 0.6s ease;
-  width: 100%;
 }
 
-div.menu-movil {
-  display: block;
-  float: right;
-  margin-top: 12px;
-  text-align: right;
-  width: 60px;
-}
-
-div.menu-movil:hover {
+.menu li a:hover {
   cursor: pointer;
-}
-
-div.menu-movil span {
-  background-color: #ffffff;
-  display: block;
-  height: 8px;
-  margin-bottom: 6px;
+  text-decoration: underline;
 }
