@@ -118,9 +118,12 @@ header.site-header p {
   gap: 25px;
 }
 
+.servicios .grid-column div {
+  background: white;
+}
+
 /* Parallax */
 .parallax::before {
-  width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
@@ -131,13 +134,14 @@ header.site-header p {
   background-attachment: fixed;
   -webkit-filter: brightness(0.8);
   filter: brightness(0.8);
+  width: 100%;
 }
 
 .seccion {
-  display: flex;
-  justify-content: center;
   align-items: center;
+  display: flex;
   height: 400px;
+  justify-content: center;
   position: relative;
 }
 
@@ -148,9 +152,20 @@ header.site-header p {
 
 .texto-parallax {
   color: #ffffff;
-
   position: relative;
 }
 
-.texto-parallax div {
+/* Footer */
+.pie-pagina {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px;
+  background-color: yellow;
+}
+
+.redes-sociales .lista-redes li {
+  display: inline-block;
+  font-size: 30px;
+  margin-right: 20px;
 }
