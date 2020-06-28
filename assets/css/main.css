@@ -55,6 +55,23 @@ header.site-header p {
   margin-top: 0;
 }
 
+@media only screen and (max-width: 500px) {
+  body {
+    background-color: red;
+  }
+  .site-header {
+    height: 50vh;
+  }
+
+  .header-titulo {
+    font-size: 4rem;
+  }
+
+  .site-header p {
+    font-size: 1.5rem;
+  }
+}
+
 /* Menu */
 .menu-principal {
   background-color: #343a40;
@@ -122,6 +139,12 @@ header.site-header p {
   background: white;
 }
 
+@media only screen and (max-width: 500px) {
+  .servicios .grid-column {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
 /* Parallax */
 .parallax::before {
   height: 100%;
@@ -156,16 +179,59 @@ header.site-header p {
 }
 
 /* Footer */
+.footer {
+  background-color: #343a40;
+  margin-top: 40px;
+}
+
 .pie-pagina {
   align-items: center;
+  background-color: #343a40;
+  color: #ffffff;
   display: flex;
   flex-direction: column;
-  margin-top: 60px;
-  background-color: yellow;
 }
 
 .redes-sociales .lista-redes li {
   display: inline-block;
   font-size: 30px;
   margin-right: 20px;
+}
+
+.lista-redes li a {
+  text-decoration: none;
+}
+
+.lista-redes i {
+  color: #5d9696;
+}
+
+.lista-redes li a:hover {
+  text-decoration: underline;
+}
+
+.info-lugar {
+  font-weight: bold;
+  text-align: center;
+}
+
+.lista-info span {
+  font-weight: 500;
+  margin-right: 20px;
+}
+
+.lista-info span i {
+  color: #5d9696;
+  font-size: 30px;
+  margin-right: 10px;
+}
+
+.info-sitio {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.info-sitio h4,
+p {
+  line-height: 1;
 }
