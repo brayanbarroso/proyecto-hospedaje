@@ -1,9 +1,20 @@
+var body = document.querySelector("body");
 var menu = document.querySelector(".menu-principal");
-console.log(menu);
+var ventana = window.screen.height;
+var alturaBarra = menu.clientHeight;
+console.log(ventana);
 window.onscroll = function () {
-  if (window.scrollY >= 660) {
+  var scroll = window.scrollY;
+  console.log(scroll);
+  if (scroll > ventana) {
     menu.classList.add("fixed");
+    body.style.marginTop = alturaBarra + "px";
   } else {
     menu.classList.remove("fixed");
+    body.style.marginTop = "0px";
   }
 };
+
+console.log(menu.clientHeight);
+
+console.log(ventana);
