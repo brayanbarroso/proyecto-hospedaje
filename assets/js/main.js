@@ -1,12 +1,13 @@
-var body = document.querySelector("body");
-var menu = document.querySelector(".menu-principal");
-var ventana = window.screen.height;
-var alturaBarra = menu.clientHeight;
-console.log(ventana);
+let body = document.querySelector("body");
+let menu = document.querySelector(".menu-principal");
+//let ventana = window.screen.height;
+let alturaBarra = menu.clientHeight;
 window.onscroll = function () {
-  var scroll = window.scrollY;
-  console.log(scroll);
-  if (scroll > ventana) {
+  let alturaCabecera = document.querySelector("header").clientHeight;
+  console.log(alturaCabecera);
+  let scroll = window.scrollY;
+  // console.log(scroll);
+  if (scroll > alturaCabecera) {
     menu.classList.add("fixed");
     body.style.marginTop = alturaBarra + "px";
   } else {
@@ -15,6 +16,8 @@ window.onscroll = function () {
   }
 };
 
-console.log(menu.clientHeight);
+let menu_movil = document.querySelector(".menu-movil");
 
-console.log(ventana);
+menu_movil.addEventListener("click", function () {
+  document.querySelector(".menu").classList.toggle("show");
+});
