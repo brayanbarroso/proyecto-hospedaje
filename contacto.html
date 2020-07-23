@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./assets/image/Logo.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="assets/css/normalize.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500&family=Roboto:ital,wght@0,100;0,300;1,100&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <title>Mar y Mar</title>
+  </head>
+
+  <body>
+    <!-- header -->
+
+    <header class="site-header">
+      <div class="casa">
+        <span>#QuedateenCasa</span>
+        <img src="./assets/image/quedate-casa.svg" alt="quedate-casa" />
+      </div>
+      <div class="titulo">
+        <h1 class="header-titulo">Mar y Mar</h1>
+        <p>
+          El mejor sitio para vacacionar ven y conocelo
+          <i class="fas fa-umbrella-beach"></i>
+        </p>
+      </div>
+    </header>
+    <!-- menu -->
+    <nav class="menu-principal">
+      <div class="content">
+        <div class="logo">
+          <img src="./assets/image/Logo-menu.png" alt="Logo Mar y Mar" />
+        </div>
+        <div class="menu-movil">
+          <i class="fas fa-bars fa-2x cambiar"></i>
+        </div>
+        <ul class="menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="#">Hospedaje</a></li>
+          <li><a href="#">Restaurante</a></li>
+          <li><a href="#">CocoLoco</a></li>
+          <li><a href="#">Galeria</a></li>
+          <li><a href="contacto.htm">Contacto</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Formulario -->
+    <main class="informacion">
+      <div class="contenedor">
+        <h2>Contactanos</h2>
+        <div class="row">
+          <div class="cont-form">
+            <form action="">
+              <legend>Formulario de Contacto</legend>
+              <div class="group-form">
+                <label for="nombre">Nombre:</label>
+                <input
+                  class="control-input"
+                  type="text"
+                  id="nombre"
+                  name="nombre"
+                  placeholder="Escriba su Nombre"
+                />
+              </div>
+              <div class="group-form">
+                <label for="apellido">Apellido:</label>
+                <input
+                  class="control-input"
+                  type="text"
+                  id="apellido"
+                  name="apellido"
+                  placeholder="Escriba su apellido"
+                />
+              </div>
+              <div class="group-form">
+                <label for="email">Email</label>
+                <input
+                  class="control-input"
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="example@example.com"
+                />
+              </div>
+              <div class="group-form">
+                <label for="asunto">Asunto</label>
+                <input
+                  class="control-input"
+                  type="text"
+                  id="asunto"
+                  name="asunto"
+                  placeholder="Escriba su asunto"
+                />
+              </div>
+              <div class="group-form">
+                <label for="mensaje">Mensaje</label>
+                <textarea
+                  class="control-input"
+                  name="mensaje"
+                  id="mensaje"
+                  cols="30"
+                  rows="4"
+                ></textarea>
+              </div>
+              <div class="alinear-boton">
+                <button class="btn btn-primary">
+                  <i class="far fa-paper-plane"></i> Enviar
+                </button>
+              </div>
+            </form>
+          </div>
+          <!-- cont-form -->
+          <div class="comentario">
+            <h2>Dejanos tu comentario</h2>
+            <p>
+              Si ya nos visitaste dejanos tu opinion sobre la experiencia en
+              Hospedaje y Restarunate Bar MAR&MAR
+            </p>
+            <form action="" id="formulario">
+              <div class="group-form">
+                <label for="nombre">Nombres:</label>
+                <input type="text" class="control-input" id="nombre-input" />
+              </div>
+              <label for="comentario">Comentario</label>
+              <textarea name="" id="tweet" class="control-input"></textarea>
+              <div class="alinear-boton">
+                <button class="btn btn-primary">
+                  <i class="far fa-paper-plane"></i> Enviar
+                </button>
+              </div>
+            </form>
+            <h3>Testimonios</h3>
+
+            <div class="" id="lista-tweets"></div>
+          </div>
+          <!-- comentario -->
+        </div>
+        <!--row  -->
+      </div>
+      <!-- Contenedor -->
+    </main>
+
+    <!-- Pie de Pagina -->
+    <footer class="footer">
+      <div class="pie-pagina contenedor">
+        <div class="redes-sociales">
+          <ul class="lista-redes">
+            <li>
+              <a href=""><i class="fab fa-facebook-f"></i></a>
+            </li>
+            <li>
+              <a href=""><i class="fab fa-instagram"></i></a>
+            </li>
+            <li>
+              <a href=""><i class="fab fa-twitter"></i></a>
+            </li>
+            <li>
+              <a href=""><i class="fab fa-whatsapp"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div class="info-lugar">
+          <p>
+            Haz tu reserva atravez de los diferentes medios o comunicate con
+            nosotros por nuetras redes sociales.
+          </p>
+          <p>Ven y Difruta</p>
+          <div class="lista-info">
+            <span
+              ><i class="fas fa-mobile-alt"></i> 3043844574 - 3016192342</span
+            >
+            <span><i class="fab fa-whatsapp"></i>3215786892 - 3014619053</span>
+            <span
+              ><i class="fas fa-mail-bulk"></i> benjalopez942@gmail.com</span
+            >
+          </div>
+        </div>
+        <div class="info-sitio">
+          <h4>MAR & MAR Hospedaje y Restaurante Bar</h4>
+          <p><strong>San Antero Córdoba</strong></p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
