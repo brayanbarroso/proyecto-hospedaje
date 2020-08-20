@@ -29,117 +29,84 @@ menu_movil.addEventListener("click", function () {
 
 // Comentarios en LocalStores
 const tweets = document.querySelector("#lista-tweets");
-var formulario = document.querySelector("#formulario");
+const btnEnviar = document.querySelector("#btnEnviar");
+const fecha = new Date();
+let dia = fecha.getDate();
+let mes = fecha.getMonth() + 1;
+let year = fecha.getFullYear();
 
-eventListeners();
+CargarEventListenners();
 
-function eventListeners() {
-  // Agregar Autor
-  formulario.addEventListener("submit", agregarAuthor);
-  // Agregar tweets
-  formulario.addEventListener("submit", agregarTweet);
-
-  formulario.addEventListener("submit", agregarFecha);
-
-  document.addEventListener("DOMContentLoaded", localStorageListoAuthor);
-
-  document.addEventListener("DOMContentLoaded", localStorageListo);
+function CargarEventListenners() {
+  btnEnviar.addEventListener("click", agregarComment);
+  document.addEventListener("DOMContentLoaded", leerLocalStorage);
 }
 
-function agregarAuthor(e) {
+// funciones
+function agregarComment(e) {
   e.preventDefault();
-  // Leer el valor del input
-  const inputNombre = document.querySelector("#nombre-input").value;
-  //Crear una etiqueta p
-  const p = document.createElement("p");
-  p.innerText = inputNombre;
-  tweets.appendChild(p);
-
-  agregarAuthorLocalStorage(inputNombre);
+  console.log(e.target.parentElement.parentElement);
+  if (e.target.classList.contains("btnEnviar")) {
+    const dato = e.target.parentElement.parentElement;
+    leerDatos(dato);
+  }
 }
 
-function agregarTweet(e) {
-  e.preventDefault();
-  const tweet = document.querySelector("#tweet").value;
-  const li = document.createElement("li");
-  li.innerText = tweet;
-  tweets.appendChild(li);
-
-  agregarTweetLocalStorage(tweet);
+function leerDatos(dato) {
+  const infoDato = {
+    nombre: dato.querySelector("#nombre-input").value,
+    comentario: dato.querySelector("#tweet").value,
+    fecha: dia + "/" + mes + "/" + year,
+  };
+  console.log(infoDato);
+  insertarDato(infoDato);
 }
 
-function agregarFecha(e) {
-  e.preventDefault();
-  const fecha = new Date();
-  let dia = fecha.getDate();
-  let mes = fecha.getMonth() + 1;
-  let year = fecha.getFullYear();
-  const span = document.createElement("span");
-  span.innerText = dia + "/" + mes + "/" + year;
-  tweets.appendChild(span);
+function insertarDato(dato) {
+  const div = document.createElement("div");
+  div.innerHTML = `
+    <h4>${dato.nombre}</h4>
+    <p>${dato.comentario}</p>
+    <span>${dato.fecha}</span>
+  `;
+  tweets.appendChild(div);
+  guardarDatosLocalStorage(dato);
 }
 
-function localStorageListoAuthor() {
-  let listaAuthors;
-  listaAuthors = obtenerAuthorLocalStorage();
-  listaAuthors.forEach(function (author) {
-    const p = document.createElement("p");
-    p.innerText = author;
+function guardarDatosLocalStorage(dato) {
+  let datos;
 
-    tweets.appendChild(p);
+  datos = obtenerDatosLocalStorage();
+  datos.push(dato);
+
+  localStorage.setItem("tweet", JSON.stringify(datos));
+}
+
+function obtenerDatosLocalStorage() {
+  let datosLS;
+  //Comprobar si hay algo en localstorage
+  if (localStorage.getItem("tweet") === null) {
+    datosLS = [];
+  } else {
+    datosLS = JSON.parse(localStorage.getItem("tweet"));
+  }
+  return datosLS;
+}
+
+// imprime los cursos de localstorage en el carrito
+function leerLocalStorage() {
+  let datosLS;
+  datosLS = obtenerDatosLocalStorage();
+  //consol e.log(cursosLS);
+
+  datosLS.forEach(function (dato) {
+    console.log(dato);
+    const div = document.createElement("div");
+    div.innerHTML = `
+    <h4>${dato.nombre}</h4>
+    <p>${dato.comentario}</p>
+    <span>${dato.fecha}</span>
+  `;
+    tweets.appendChild(div);
   });
 }
-
-function localStorageListo() {
-  let listaTweets;
-  listaTweets = obtenerTweetsLocalStorage();
-  listaTweets.forEach(function (tweet) {
-    const li = document.createElement("li");
-    li.innerText = tweet;
-    tweets.appendChild(li);
-  });
-}
-
-function agregarAuthorLocalStorage(author) {
-  let authors;
-  authors = obtenerAuthorLocalStorage();
-  authors.push(author);
-  localStorage.setItem("author", JSON.stringify(authors));
-}
-
-function agregarTweetLocalStorage(tweet) {
-  let tweets;
-  tweets = obtenerTweetsLocalStorage();
-  tweets.push(tweet);
-  localStorage.setItem("tweets", JSON.stringify(tweets));
-}
-
-function obtenerAuthorLocalStorage() {
-  let authors;
-
-  if (localStorage.getItem("author") == null) {
-    authors = [];
-  } else {
-    authors = JSON.parse(localStorage.getItem("author"));
-  }
-  return authors;
-}
-
-function obtenerTweetsLocalStorage() {
-  let tweets;
-
-  if (localStorage.getItem("tweets") == null) {
-    tweets = [];
-  } else {
-    tweets = JSON.parse(localStorage.getItem("tweets"));
-  }
-  return tweets;
-}
-
-// Menu Activo
-// let activo = document.querySelector(".menu li");
-// console.log(activo);
-// activo.on("click", function () {
-//   activo.classList.remove("activo");
-//   this.classList.add("activo");
-// });
